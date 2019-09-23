@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mpnew
+  labels:
+    app: mpnew
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mpnew
+  template:
+    metadata:
+      labels:
+        app: mpnew
+    spec:
+      containers:
+        - name: mpnew
+          image: placeholder/image
+          ports:
+            - containerPort: 8080
