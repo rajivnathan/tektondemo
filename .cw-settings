@@ -1,0 +1,15 @@
+{
+  "contextRoot": "",
+  "internalPort": "",
+  "healthCheck": "",
+  "ignoredPaths": [
+    ""
+  ],
+  "internalDebugPort": "",
+  "mavenProfiles": [
+    ""
+  ],
+  "mavenProperties": [
+    ""
+  ]
+}
