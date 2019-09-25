@@ -1,3 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mpnew
+  labels:
+    app: mpnew
+spec:
+  clusterIP: None
+  ports:
+    - port: 9080
+      name: mpnew
+  selector:
+    app: mpnew
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +29,30 @@ spec:
         app: mpnew
     spec:
       containers:
-        - name: mpnew
-          image: placeholder/image
-          ports:
-            - containerPort: 8080
+      - name: mpnew
+        image: gcr.io/k8s-skaffold/mpnew
+        ports:
+        - containerPort: 9080
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mpnew
+  namespace: default
+  annotations:
+    ingress.kubernetes.io/backend-protocol: "HTTP"
+    ingress.kubernetes.io/rewrite-target: /
+    ingress.kubernetes.io/proxy-body-size: "0"
+    ingress.kubernetes.io/secure-backends: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/secure-backends: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+spec:
+  rules:
+  - host: mpnew.9.42.26.74.nip.io
+    http:
+      paths:
+      - backend:
+          serviceName: mpnew
+          servicePort: 9080
