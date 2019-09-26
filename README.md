@@ -1,5 +1,5 @@
 ## Microservice
-IBM Cloud Microservice Starter for Java - MicroProfile / Java EE
+A sample IBM Cloud Microservice Starter for Java - MicroProfile / Java EE
 
 [![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
 [![Platform](https://img.shields.io/badge/platform-java-lightgrey.svg?style=flat)](https://www.ibm.com/developerworks/learn/java/)
