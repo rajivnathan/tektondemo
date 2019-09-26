@@ -40,7 +40,6 @@ metadata:
   name: mpnew
   labels:
     app: mpnew
-  namespace: default
   annotations:
     ingress.kubernetes.io/backend-protocol: "HTTP"
     ingress.kubernetes.io/rewrite-target: /
@@ -52,7 +51,7 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
   rules:
-  - host: mpnew.9.42.26.74.nip.io
+  - host: mpnew.9.26.136.78.nip.io
     http:
       paths:
       - backend:
