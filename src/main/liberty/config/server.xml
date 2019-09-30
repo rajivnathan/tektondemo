@@ -19,6 +19,6 @@
 
   <applicationMonitor pollingRate="1000ms"/>
 
-  <webApplication name="mpnew" location="${app.location}" contextRoot="/"/>
+  <webApplication name="tektondemo" location="${app.location}" contextRoot="/"/>
 
 </server>
